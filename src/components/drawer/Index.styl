@@ -1,0 +1,49 @@
+.drawer
+  width 227px
+  padding-left 100px
+  padding-top 200px
+  background-color $opal-white
+  display flex
+  justify-content center
+  height 100dvh
+  position relative
+  z-index 1
+  @media (max-width: 768px)
+    width 100%
+    padding-top: 0
+    padding-left 0
+
+  .inner_container
+    h4
+      margin-bottom 52px
+    ul
+      list-style none;
+      padding 0
+      li  
+        margin-bottom 15px
+        display flex
+        justify-content flex-start
+        align-items center
+        font-size clamp(11px, 2vw, 13px)
+        font-style normal
+        font-weight 600
+        line-height 25px
+        span
+            border-radius 50px
+            height 20px
+            width 20px
+            display flex
+            justify-content center
+            align-items center
+            margin-left 5px
+            color $white
+            font-size 11px
+            font-style normal
+            font-weight 700
+            line-height normal
+        span.danger
+            background-color $danger
+        span.warning
+            background-color $warning
+        svg
+          margin-right 12px

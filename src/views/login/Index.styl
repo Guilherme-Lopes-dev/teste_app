@@ -1,0 +1,86 @@
+.main_container
+  display flex
+  width 100dvw
+  height 100dvh
+  
+.logo_container
+  width 35%
+  height 100%
+  background $blue
+  display flex
+  justify-content center
+  align-items center
+  @media (max-width: 768px)
+    display none
+  .inner_container
+    h2
+      text-transform uppercase
+      font-size clamp(24px, 4vw, 48px)
+      line-height normal
+      font-style normal
+      font-weight 400
+      color $white
+      margin 0
+    
+    b
+      font-weight 700
+
+    h3
+      color: #FFF;
+      margin 0
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+   
+
+.form_container
+        width 65%
+        justify-content center
+        align-items center
+        display flex
+        @media (max-width: 768px)
+          width 100%
+    .inner_container
+         h3  
+            font-size 18px
+            font-weight 700
+            font-style normal
+            line-height: normal
+            margin-bottom 35px
+        form
+            justify-content center
+            align-items center
+            flex-direction column
+            width 368px
+            margin-bottom 42px
+            @media (max-width: 768px)
+              width 100%
+            .form-group
+                display flex
+                flex-direction column
+                margin-bottom 22px
+                label
+                    color $darkblue
+                    font-size 14px
+                    font-style normal
+                    font-weight 600
+                    line-height normal
+                    margin-bottom 5px
+                input
+                    width 100%
+                    max-width 368px
+                    height 45px
+                    flex-shrink 0
+                    border 2px solid $blue
+                    border-radius 5px
+                    background $white
+        a
+            color $blue
+            text-decoration underline
+            font-size 13px
+            font-weight 600
+            cursor pointer
+            line-height normal
+
+
