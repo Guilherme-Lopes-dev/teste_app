@@ -1,10 +1,16 @@
 <template>
-  <main class="home">
-    <Header />
-    <Sidebar />
-    <Drawer />
-    <Todo style="display: none" />
-  </main>
+  <div class="container_home">
+    <div class="menu">
+      <Sidebar  />
+    </div>
+    <div class="main">
+      <Header  />
+      <div class="main_content">
+        <Drawer />
+        <Todo />
+      </div>
+    </div>
+  </div>
 </template>
 <script>
 import Sidebar from "../../components/sidebar/Index.vue";

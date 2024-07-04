@@ -1,0 +1,43 @@
+.delete_task
+    display: flex
+    flex-direction: column
+    justify-content center
+    align-items: center
+    .trash_icon
+        width: 136px;
+        height: 136px;
+        flex-shrink: 0;
+        border-radius: 50%
+        background-color $sectiongrey
+        display: flex
+        justify-content center
+        align-items center
+        margin-bottom 12px
+    .trash_text
+        text-align: center;
+        font-size: clamp(16px, 3vw, 20px)
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        span
+            b
+                color: $danger
+                font-size: clamp(16px, 3vw, 20px)
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+    .confirm_text
+        color $deletegrey
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        font-size: clamp(11px, 3vw, 15px)
+        margin-bottom 30px
+    .trash_buttons
+        display: flex
+        width 100%
+        justify-content: center
+        gap 12px
+        button
+            height: 47px
+            width 118px

@@ -1,29 +1,33 @@
-import { createApp } from 'vue';
-import App from './App.vue';
-import router from './router';
-import Button from './components/button/Index.vue';
-import Modal from './components/modal/Index.vue';
-import Dashboard from '../src/assets/icons/Dashboard.vue';
+import { createApp } from "vue";
+import App from "./App.vue";
+import router from "./router";
+import Button from "./components/button/Index.vue";
+import Modal from "./components/modal/Index.vue";
+import Dashboard from "../src/assets/icons/Dashboard.vue";
 import Confirm from "../src/assets/icons/Confirm.vue";
 import Cog from "../src/assets/icons/Cog.vue";
-import Arrow from  "../src/assets/icons/Arrow.vue";
-import './styles/global.styl';
-
+import Arrow from "../src/assets/icons/Arrow.vue";
+import Vertical from "../src/assets/icons/Vertical.vue";
+import Plus from "../src/assets/icons/Plus.vue";
+import Search from "../src/assets/icons/Search.vue";
+import Close from "../src/assets/icons/Close.vue";
+import Trash from "../src/assets/icons/Trash.vue";
+import store from "./vuex/store.js";
+import "./styles/global.styl";
+//Aqui estão os componentes, começando pelo router, depois os icones que preferi criar dessa forma pra evitar que o SVG poluisse a tela
 const app = createApp(App);
-
 app.use(router);
+app.component("Button", Button);
+app.component("Modal", Modal);
+app.component("dashboard", Dashboard);
+app.component("confirm", Confirm);
+app.component("cog", Cog);
+app.component("arrow", Arrow);
+app.component("plus", Plus);
+app.component("vertical", Vertical);
+app.component("search", Search);
+app.component("close", Close);
+app.component("trash", Trash);
+app.use(store);
 
-app.component('Button', Button);
-app.component('Modal', Modal);
-app.component('dashboard', Dashboard);
-app.component('confirm', Confirm);
-app.component('cog', Cog);
-app.component('arrow', Arrow);
-
-
-
-
-
-
-
-app.mount('#app');
+app.mount("#app");

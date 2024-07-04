@@ -1,5 +1,4 @@
 .sidebar
-  position absolute
   height 100dvh
   width 110px
   background-color $blue
@@ -11,7 +10,8 @@
   z-index 3
   left 0
   top 0
-
+  @media (max-width: 768px)
+    width 80px
   img
     height 50px
     width 50px
@@ -34,8 +34,7 @@
       height 83px
       border 1px solid $ligth-blue
       position relative
-      z-index 5
-
+      font-size clamp(8px, 3vw, 12px)
       .icon
         display flex
         justify-content center

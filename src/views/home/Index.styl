@@ -1,3 +1,13 @@
-.home
-    position relative
-    display block
+.container_home
+    display: flex
+    .menu
+        width 110px
+        @media (max-width: 768px)
+            width 80px
+    .main
+        width 100%
+        .main_content
+            display: flex
+            max-width 100%
+            @media (max-width: 768px)
+                flex-direction: column

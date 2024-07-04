@@ -10,47 +10,55 @@
     <div class="form_container">
       <div class="inner-container">
         <h3>Entre com seus dados de acesso.</h3>
-        <form action="">
+        <form @submit.prevent="login" class="form_login">
           <div class="form-group">
             <label for="email">Nome de usuário ou e-mail:</label>
-            <input type="text" v-model="formData.email" />
+            <input type="text" class="login_input" v-model="formData.email" />
           </div>
           <div class="form-group">
             <label for="password">Senha:</label>
-            <input type="password" v-model="formData.password" />
+            <input
+              type="password"
+              class="login_input"
+              v-model="formData.password"
+            />
           </div>
-          <Button class="button button-success w100" @click="login">
+          <Button class="button button-success" type="submit">
             <span> Entrar </span>
           </Button>
         </form>
+        <Modal :visible="isModalOpen" @update:visible="isModalOpen = $event">
+          <h3>Por favor, insira e-mail e senha.</h3>
+        </Modal>
         <a> Esqueci minha senha</a>
       </div>
     </div>
   </main>
 </template>
+
 <script>
 import "./Index.styl";
 import Logo from "../../assets/images/logo.png";
-import { reactive } from "vue";
+import { reactive, ref } from "vue";
 import { useRouter } from "vue-router";
 export default {
   name: "Login",
-
   setup() {
     const router = useRouter();
+    const isModalOpen = ref(false)
     const login = () => {
-      router.push("/home");
+      if (formData.email !== "" && formData.password !== "") {
+        router.push("/home");
+      } else {
+        isModalOpen.value = true
+      }
     };
+
     const formData = reactive({
       email: "",
       password: "",
     });
-    return { Logo, formData, login };
+    return { Logo, formData, login,  isModalOpen };
   },
 };
 </script>
-<style scope>
-button {
-  height: 55px;
-}
-</style>
