@@ -254,7 +254,6 @@ export default {
       formState.description = updatedFormState.description;
       formState.priority = updatedFormState.priority;
     };
-    console.log(todos.value.length && filteredTodos.value.length);
 
     return {
       todos,
