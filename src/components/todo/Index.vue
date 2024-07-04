@@ -139,12 +139,23 @@ export default {
 
     const filteredTodos = computed(() => {
       const query = searchQuery.value.toLowerCase();
-      if (!query) return state.todo.data;
-      return state.todo.data.filter(
-        (todo) =>
-          todo.name.toLowerCase().includes(query) ||
-          todo.description.toLowerCase().includes(query)
-      );
+      let todos = state.todo.data;
+
+      if (query) {
+        todos = todos.filter(
+          (todo) =>
+            todo.name.toLowerCase().includes(query) ||
+            todo.description.toLowerCase().includes(query)
+        );
+      }
+
+      return todos.sort((a, b) => {
+        const priorities = ["urgente", "importante", "outras"];
+        return (
+          priorities.indexOf(a.priority.toLowerCase()) -
+          priorities.indexOf(b.priority.toLowerCase())
+        );
+      });
     });
 
     const addTodo = () => {

@@ -20,3 +20,5 @@ npm run serve
 
 # Com qualquer valor no input de email e senha, conseguimos logar e ao clicar na foto de avatar, redireciona pra tela de login
 
+# Tive duvida na cor dos botões do formulário pra deletar, fiz conforme design com as cores intuitivamente erradas
+
